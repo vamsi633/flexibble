@@ -97,7 +97,10 @@ export const createNewProject = async (
   }
 };
 
-export const fetchAllProjects = (category?: string, endcursor?: string) => {
+export const fetchAllProjects = (
+  category?: string | null,
+  endcursor?: string | null
+) => {
   client.setHeader("x-api-key", apiKey);
 
   const categories = category == null ? categoryFilters : [category];
